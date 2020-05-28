@@ -12,12 +12,18 @@
  generic temporal framework, we could invert this dependency using a ```TemporalObject``` interface to allow the reuse of the
  formatter. ex:
  ```java
+
+public class Time implements TemporalObject {
+  ...
+}
+
 public class TimeFormatter { 
     public String format(TemporalObject obj) {
       ...
     }
    ...
 }
+
 ```
  - Throwing an ```IllegalArgumentException``` from the ```TimeFormatter``` doesn't clearly communicate the failure mode.  A more specific ```TimeFormatException``` would be better. I've omitted it
   here for

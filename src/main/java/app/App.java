@@ -7,7 +7,7 @@ import time.TimeFormatter;
 
 public class App {
 
-    public static String addSecondsToTime(String timeString, int minutesToAdd) {
+    public static String addMinutesToTime(String timeString, int minutesToAdd) {
         Time time = TimeFormatter.parse(timeString);
         time = time.addMinutes(minutesToAdd);
         return TimeFormatter.format(time);
@@ -18,7 +18,7 @@ public class App {
         String timeString = scanner.nextLine();
         int minutesToAdd = Integer.parseInt(scanner.next());
         try {
-            System.out.println(addSecondsToTime(timeString, minutesToAdd));
+            System.out.println(addMinutesToTime(timeString, minutesToAdd));
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         }
